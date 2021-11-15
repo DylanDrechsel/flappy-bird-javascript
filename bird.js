@@ -1,6 +1,10 @@
 const birdElem = document.querySelector('[data-bird]')
 const BIRD_SPEED = .5
 
+export function setupBird() {
+    setTop(window.innerHeight / 2)
+}
+
 export function updateBird(delta) {
     /* calculation to make sure the bird falls at a consisant rate regardless of frame rate */
     setTop(getTop() + BIRD_SPEED * delta)

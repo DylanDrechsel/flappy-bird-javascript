@@ -33,12 +33,15 @@ function checkLose() {
 function handleStart() {
     title.classList.add("hide")
     setupBird()
+    lastTime = null
     window.requestAnimationFrame(updateLoop)
 }
 
 function handleLose() {
-    title.classList.remove("hide")
-    subtitle.classList.remove("hide")
-    subtitle.textContent = " 0 Pipes"
-    document.addEventListener("keypress", handleStart, { once: true })
+    setTimeout(() => {
+        title.classList.remove("hide")
+        subtitle.classList.remove("hide")
+        subtitle.textContent = " 0 Pipes"
+        document.addEventListener("keypress", handleStart, { once: true })
+    }, 100)
 }

@@ -12,7 +12,7 @@ export function setupBird() {
 export function updateBird(delta) {
     /* calculation to make sure the bird falls/jumps at a consisant rate regardless of frame rate */
     if (timeSinceLastJump < JUMP_DURATION) {
-        setTop(getTop() - BIRD_SPEED * delta)
+        setTop((getTop() - 5) - BIRD_SPEED * delta)
     } else {
         setTop(getTop() + BIRD_SPEED * delta)
     }
